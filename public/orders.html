@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  fetch('/api/product/notification/factory/5')
+    .then(response => {
+      // Extract the hub URL from the Link header
+      const hubUrl = response.headers.get('Link').match(/<([^>]+)>;\s+rel=(?:mercure|"[^"]*mercure[^"]*")/)[1];
+
+      // Append the topic(s) to subscribe as query parameter
+      const hub = new URL(hubUrl, window.origin);
+      hub.searchParams.append('topic', response.topic);
+
+      // Subscribe to updates
+      const eventSource = new EventSource(hub);
+      eventSource.onmessage = event => console.log(event.data);
+    });
+</script>
+</body>
+</html>
