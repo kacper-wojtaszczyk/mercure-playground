@@ -24,7 +24,7 @@ final class ProductController
         Request $request,
         int $factoryId
     ): JsonResponse {
-        $topic = 'https://localtest.me/notifications/product/factory/' . $factoryId;
+        $topic = 'http://localtest.me/notifications/product/factory/' . $factoryId;
         $this->discovery->addLink($request);
         $this->authorization->setCookie($request, [$topic]);
 
