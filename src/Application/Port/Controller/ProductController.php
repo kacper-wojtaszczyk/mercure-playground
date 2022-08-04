@@ -30,7 +30,7 @@ final class ProductController
         return new JsonResponse(['topic' => $topic], Response::HTTP_OK);
     }
 
-    #[Route('/api/product/factory/{factoryId}', name: 'factory_notification')]
+    #[Route('/api/product/factory/{factoryId}', name: 'create_product')]
     public function createProduct(
         MessageBusInterface $messageBus,
         Request $request,
