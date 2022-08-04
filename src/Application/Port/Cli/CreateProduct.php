@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Port\Cli;
+namespace App\Application\Port\Cli;
 
-use App\Port\Notification\SummaryNotification;
-use App\Domain\Status;
+use App\Application\Port\Notification\SummaryNotification;
+use App\Domain\Product\Status;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -15,8 +15,8 @@ use Symfony\Component\Mercure\HubInterface;
 use Symfony\Component\Mercure\Update;
 use Symfony\Component\Serializer\SerializerInterface;
 
-#[AsCommand(name: 'app:mercure:send')]
-final class SendMercureNotification extends Command
+#[AsCommand(name: 'app:product:create', description: 'Create a new product')]
+final class CreateProduct extends Command
 {
     public function __construct(
         private readonly HubInterface $hub,

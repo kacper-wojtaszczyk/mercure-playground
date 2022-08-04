@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Port\Notification;
+namespace App\Application\Port\Notification;
 
-use App\Domain\Status;
+use App\Domain\Product\Status;
 use JetBrains\PhpStorm\ArrayShape;
 use JsonSerializable;
 

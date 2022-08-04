@@ -13,18 +13,19 @@ services:
     restart: unless-stopped
     volumes:
       - php_socket:/var/run/php
+      - ./:/srv/app
     healthcheck:
       interval: 10s
       timeout: 3s
       retries: 3
       start_period: 30s
+
+  mongo:
+    image: mongo:latest
+    restart: always
     environment:
-      # Run "composer require symfony/orm-pack" to install and configure Doctrine ORM
-      DATABASE_URL: postgresql://${POSTGRES_USER:-symfony}:${POSTGRES_PASSWORD:-ChangeMe}@database:5432/${POSTGRES_DB:-app}?serverVersion=${POSTGRES_VERSION:-13}
-      # Run "composer require symfony/mercure-bundle" to install and configure the Mercure integration
-      MERCURE_URL: ${CADDY_MERCURE_URL:-http://caddy/.well-known/mercure}
-      MERCURE_PUBLIC_URL: http://${SERVER_NAME:-localtest.me}/.well-known/mercure
-      MERCURE_JWT_SECRET: 482B4D6251655368566D597133743677397A24432646294A404E635266556A57
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
 
   caddy:
     container_name: mercure-playground-caddy

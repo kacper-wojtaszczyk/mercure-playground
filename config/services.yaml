@@ -1,12 +1,11 @@
-parameters:
-
 services:
     _defaults:
         autowire: true
         autoconfigure: true
         
-    App\Port\Cli\SendMercureNotification:
+    App\Application\Port\Cli\SendMercureNotification:
         arguments:
             $baseUrl: '%env(resolve:SERVER_NAME)%'
-    App\Port\Controller\ProductController:
+    App\Application\Port\Controller\ProductController:
         tags: ['controller.service_arguments']
+    App\Application\CommandHandler\CreateProductHandler: ~

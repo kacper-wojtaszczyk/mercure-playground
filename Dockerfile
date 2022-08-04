@@ -32,11 +32,14 @@ RUN set -eux; \
 	docker-php-ext-install -j$(nproc) \
 		intl \
 		zip \
-	; \
+        \
+    ; \
 	pecl install \
 		apcu-${APCU_VERSION} \
 	; \
-	pecl clear-cache; \
+    pecl install mongodb \
+        &&  echo "extension=mongodb.so" > $PHP_INI_DIR/conf.d/mongo.ini; \
+    pecl clear-cache; \
 	docker-php-ext-enable \
 		apcu \
 		opcache \

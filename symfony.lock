@@ -1,4 +1,7 @@
 {
+    "brick/math": {
+        "version": "0.9.3"
+    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -8,11 +11,51 @@
             "ref": "64d8583af5ea57b7afa4aba4b159907f3a148b05"
         }
     },
+    "doctrine/cache": {
+        "version": "2.1.1"
+    },
+    "doctrine/collections": {
+        "version": "1.6.8"
+    },
+    "doctrine/deprecations": {
+        "version": "v1.0.0"
+    },
+    "doctrine/event-manager": {
+        "version": "1.1.1"
+    },
     "doctrine/instantiator": {
         "version": "1.4.1"
     },
     "doctrine/lexer": {
         "version": "1.2.3"
+    },
+    "doctrine/mongodb-odm": {
+        "version": "2.4.2"
+    },
+    "doctrine/mongodb-odm-bundle": {
+        "version": "4.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "4.1",
+            "ref": "68562ca89de9f97a952535cd3eee49f5541b76a7"
+        },
+        "files": [
+            "config/packages/doctrine_mongodb.yaml",
+            "src/Document/.gitignore"
+        ]
+    },
+    "doctrine/persistence": {
+        "version": "2.5.3"
+    },
+    "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.12"
+    },
+    "jean85/pretty-package-versions": {
+        "version": "2.0.5"
+    },
+    "laminas/laminas-code": {
+        "version": "4.5.1"
     },
     "lcobucci/clock": {
         "version": "2.2.0"
@@ -22,6 +65,9 @@
     },
     "masterminds/html5": {
         "version": "2.7.5"
+    },
+    "mongodb/mongodb": {
+        "version": "1.12.0"
     },
     "myclabs/deep-copy": {
         "version": "1.11.0"
@@ -93,6 +139,12 @@
     },
     "psr/log": {
         "version": "3.0.0"
+    },
+    "ramsey/collection": {
+        "version": "1.2.2"
+    },
+    "ramsey/uuid": {
+        "version": "4.3.1"
     },
     "roave/security-advisories": {
         "version": "dev-latest"
@@ -181,6 +233,9 @@
     "symfony/deprecation-contracts": {
         "version": "v3.0.1"
     },
+    "symfony/doctrine-bridge": {
+        "version": "v6.1.0-RC1"
+    },
     "symfony/dom-crawler": {
         "version": "v6.1.0-BETA2"
     },
@@ -259,6 +314,21 @@
         "files": [
             "config/packages/mercure.yaml"
         ]
+    },
+    "symfony/messenger": {
+        "version": "6.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.0",
+            "ref": "2523f7d31488903e247a522e760dc279be7f7aaf"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
+    },
+    "symfony/options-resolver": {
+        "version": "v6.1.0-RC1"
     },
     "symfony/phpunit-bridge": {
         "version": "6.0",
